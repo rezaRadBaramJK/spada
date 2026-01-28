@@ -1,66 +1,47 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-
-export default function Home() {
+export default function Page() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main className="relative min-h-screen w-full overflow-hidden bg-black">
+      {/* Background Video */}
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        src="/video.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+
+      {/* Gradient + vignette overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black/90" />
+      <div className="absolute inset-0 shadow-[inset_0_0_200px_80px_rgba(0,0,0,0.9)]" />
+
+      {/* Content */}
+      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 text-center text-white">
+        {/* Logo */}
+        <img
+          src="/logo.png"
+          alt="Spada"
+          className="mb-10 w-48 sm:w-64 md:w-80 animate-fade-in-up"
         />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+
+        {/* Headline */}
+        <h1 className="text-3xl font-semibold tracking-[0.35em] sm:text-4xl md:text-5xl">
+          COMING SOON
+        </h1>
+
+        {/* Subheadline */}
+        <p className="mt-6 max-w-xl text-sm uppercase tracking-widest text-white/70 sm:text-base">
+          Something powerful is being forged. Stay tuned.
+        </p>
+
+        {/* Divider */}
+        <div className="mt-14 h-px w-32 bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+
+        {/* Footer */}
+        <p className="mt-6 text-xs tracking-widest text-white/40">
+          © {new Date().getFullYear()} SPADA
+        </p>
+      </div>
+    </main>
   );
 }
