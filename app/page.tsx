@@ -1,4 +1,4 @@
-export default function ComingSoon() {
+export default function Page() {
   return (
     <main className="relative min-h-screen w-full overflow-hidden bg-black">
       {/* Background Video */}
