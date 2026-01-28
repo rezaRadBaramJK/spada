@@ -1,5 +1,3 @@
-"use client";
-
 export default function ComingSoon() {
   return (
     <main className="relative min-h-screen w-full overflow-hidden bg-black">
